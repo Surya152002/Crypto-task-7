@@ -1,3 +1,9 @@
+import streamlit as st
+import backtrader as bt
+import yfinance as yf
+import matplotlib.pyplot as plt
+from datetime import datetime
+
 # Define the trading strategy
 class SmaCross(bt.Strategy):
     params = dict(
