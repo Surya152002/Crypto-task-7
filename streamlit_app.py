@@ -42,11 +42,11 @@ if 'running' not in st.session_state:
 # Streamlit app layout
 st.title('Cryptocurrency Trading Bot Simulation')
 
-# Sidebar for user input
-st.sidebar.header('User Input Parameters')
-selected_crypto = st.sidebar.selectbox('Select cryptocurrency', ('BTC-USD', 'ETH-USD', 'LTC-USD'))
-start_date = st.sidebar.date_input('Start date', datetime(2020, 1, 1))
-end_date = st.sidebar.date_input('End date', datetime(2021, 1, 1))
+# container for user input
+st.header('User Input Parameters')
+selected_crypto = st.selectbox('Select cryptocurrency', ('BTC-USD', 'ETH-USD', 'LTC-USD'))
+start_date = st.date_input('Start date', datetime(2020, 1, 1))
+end_date = st.date_input('End date', datetime(2021, 1, 1))
 
 # Function to handle start button
 def start_bot():
@@ -57,8 +57,8 @@ def stop_bot():
     st.session_state.running = False
 
 # Buttons to start/stop the bot
-st.sidebar.button('Start Bot', on_click=start_bot)
-st.sidebar.button('Stop Bot', on_click=stop_bot)
+st.button('Start Bot', on_click=start_bot)
+st.button('Stop Bot', on_click=stop_bot)
 
 # Display bot status
 if st.session_state.running:
